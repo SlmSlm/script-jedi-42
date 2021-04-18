@@ -1,7 +1,7 @@
 // https://www.codewars.com/kata/is-this-my-tail/train/javascript
 
 function correctTail(bod, tail) {
-  let sub = bod.substr(bod.length - tail.length);
+  const sub = bod.substr(bod.length - tail.length);
   if (sub === tail) {
     return true;
   } else {
@@ -22,8 +22,8 @@ function bonusTime(salary, bonus) {
 //https://www.codewars.com/kata/5a58d889880385c2f40000aa
 
 function automorphic(n) {
-  let square = Math.pow(n, 2).toString();
-  let num = n.toString();
+  const square = Math.pow(n, 2).toString();
+  const num = n.toString();
   if (square.substring(square.length - num.length) == n) {
     return "Automorphic";
   } else {

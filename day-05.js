@@ -12,7 +12,7 @@ function correctTail(bod, tail) {
 // https://www.codewars.com/kata/56f6ad906b88de513f000d96
 
 function bonusTime(salary, bonus) {
-  if (bonus == true) {
+  if (bonus === true) {
     return "\u00A3" + salary * 10;
   } else {
     return "\u00A3" + salary;
@@ -24,7 +24,7 @@ function bonusTime(salary, bonus) {
 function automorphic(n) {
   const square = Math.pow(n, 2).toString();
   const num = n.toString();
-  if (square.substring(square.length - num.length) == n) {
+  if (square.substring(square.length - num.length) === n) {
     return "Automorphic";
   } else {
     return "Not!!";

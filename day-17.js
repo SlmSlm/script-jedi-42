@@ -20,8 +20,58 @@ function countGrade(scores) {
   return res;
 }
 
+//http://www.codewars.com/kata/57308546bd9f0987c2000d07
 
-//
+function mirrorImage(arr) {
+  let res = [];
+  arr.some((currentValue, i) => {
+    let nextItem = arr[i + 1];
+    if (i + 1 < arr.length) {
+      if (currentValue === nextItem) {
+        return res.push(currentValue, nextItem);
+      } else if (
+        currentValue.toString() ===
+        nextItem.toString().split("").reverse().join("")
+      ) {
+        return res.push(currentValue, nextItem);
+      }
+    }
+  });
+  if (res.length === 0) {
+    res.push(-1, -1);
+    return res;
+  } else {
+    return res;
+  }
+}
 
+//http://www.codewars.com/kata/5731861d05d14d6f50000626
+// Через replaceAll не проходить тести, але працює 
 
-//
+function bigToSmall(arr) {
+  let joinedArr = [].concat(...arr);
+  function compare(a, b) {
+    return b - a;
+  }
+  return joinedArr.sort(compare).toString().replaceAll(",", "<");
+}
+
+// Варіант для кодварс:
+
+function bigToSmall(arr) {
+  let joinedArr = []
+    .concat(...arr)
+    .sort(compare)
+    .toString()
+    .split("");
+  function compare(a, b) {
+    return b - a;
+  }
+  joinedArr.forEach(function (item, i) {
+    if (item === ",") {
+      joinedArr[i] = ">";
+    }
+  });
+  return joinedArr.join("");
+}
+
